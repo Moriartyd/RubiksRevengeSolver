@@ -8,8 +8,6 @@ import java.util.Set;
 @Getter
 @Setter
 public class Square {
-
-    private Position position;
     private Set<Color> colors;
     private Color color;
 

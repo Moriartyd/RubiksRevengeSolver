@@ -8,8 +8,9 @@ public enum Color {
     yellow("y"),
     green("g"),
     blue("b"),
-    reg("r"),
-    orange("o");
+    red("r"),
+    orange("o"),
+    undefined("u");
 
     private String sign;
 }

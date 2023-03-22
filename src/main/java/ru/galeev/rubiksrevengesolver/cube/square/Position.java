@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Position {
-    private int face;
-    private int x;
+    private String faceName;
     private int y;
+    private int x;
 }
