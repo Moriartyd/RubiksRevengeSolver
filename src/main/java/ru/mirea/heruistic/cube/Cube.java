@@ -35,7 +35,7 @@ import java.util.Random;
 public class Cube {
 	private static final String TAB_SHIFT_BIG = "\t\t\t\t\t\t";
 	private static final String TAB_SHIFT_SMALL = "\t";
-	private static final int NUM_RANDOM_TWISTS = 2;
+	private static final int NUM_RANDOM_TWISTS = 20;
 	public static final int N = 4;
 	public static final int N2 = N * N;
 	public static final int NUM_FACES = 6;
@@ -66,6 +66,9 @@ public class Cube {
 	
 	public ArrayList<Twist> getTwists() {
 		return twists;
+	}
+	public int numTwists() {
+		return twists.size();
 	}
 	
 	public Cube() {
@@ -100,6 +103,13 @@ public class Cube {
 			}
 		}
 	}
+
+	public Twist lastTwist() {
+		if (twists.isEmpty()) {
+			return null;
+		}
+		else return twists.get(twists.size() - 1);
+	}
 	
 	public void scramble() {
 		scramble(NUM_RANDOM_TWISTS);
@@ -124,7 +134,11 @@ public class Cube {
 			last = twist;
 		}
 	}
-	
+
+	public void clear() {
+		twists.clear();
+	}
+
 	public boolean isSolved() {
 		for (int i = 0; i < SIZE; i++) {
 			if (colors[i] != SOLVED[i]) return false;

@@ -12,11 +12,9 @@ import java.util.List;
 public class SolverTest {
 
     @Test
-    public void test() throws IOException, InterruptedException {
+    public void test() {
         Cube cube = new Cube(Cube.SOLVED.clone(), new ArrayList<Twist>());
-//        cube.printCube();
         cube.scramble();
-//        cube.turn(Twist.L);
         cube.printCube();
         Solver solver = new Solver(cube);
         List<Twist> solution = solver.solve();
